@@ -1,13 +1,15 @@
 const express = require ('express');
+const { getItems, getItem } = require('../controllers/tracks');
 const router = express.Router();
 
+
 //CRUD
-// crearemos una ruta con el método get
-router.get("/", (req, res) => {
+//Vamop a generar http://localhost/tracks
+router.get("/", getItems);
 
-    const data = ["hola", "mundo"]
+router.get("/:id", getItem)
 
-    res.send({data})
-})
+    
+
 
 module.exports = router
